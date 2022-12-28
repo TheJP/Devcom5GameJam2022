@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/LevelCompleteBanner/LevelCompleteBanner.uss?fileID=7433441132597879392&amp;guid=04db0be08d7a1374d984d7adcaadbde9&amp;type=3#LevelCompleteBanner" />
+    <ui:VisualElement class="banner-box">
+        <ui:VisualElement name="colour-box" class="banner-inner-box">
+            <ui:Label text="Level Complete" name="banner-text" class="banner-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

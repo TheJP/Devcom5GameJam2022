@@ -478,6 +478,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2117773955239525824, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2117773955351818582, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -538,8 +542,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2117773955937510698, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117773955937568545, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2117773956018727680, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117773956154072605, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2117773956154072606, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
@@ -4422,6 +4438,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[35].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 2117773956239763930, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2117773956329492230, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
       propertyPath: m_Tiles.Array.size
       value: 36
@@ -5649,6 +5669,10 @@ PrefabInstance:
     - target: {fileID: 2117773956329492230, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
       propertyPath: m_Tiles.Array.data[35].second.m_TileObjectToInstantiateIndex
       value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117773956380576479, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abd89095bd2a4af4cb2e873a0a4ac109, type: 3}
