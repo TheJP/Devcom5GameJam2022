@@ -46,9 +46,15 @@ public class Player : MonoBehaviour
 
     private void LightHolderFound(LightHolder lightHolder)
     {
-        if (!lightHolder.HasLight) { return; }
-        var kind = lightHolder.RemoveLight();
-        lightsManager.PushLight(kind);
+        if (lightHolder.HasLight)
+        {
+            var kind = lightHolder.RemoveLight();
+            lightsManager.PushLight(kind);
+        }
+        else if (lightsManager.TryRemove(lightHolder.LightKind))
+        {
+            lightHolder.AddLight();
+        }
     }
 
     private void LightSinkFound(LightSink lightSink)

@@ -38,6 +38,8 @@ public class LightsManager : MonoBehaviour
 
     public bool IsLayerVisible(int layer) => layer == 0 || layer == LayerOffset + (int)lights;
 
+    public bool HasLight(LightKind kind) => (lights & (LightColour)kind) != LightColour.Black;
+
     private void ChangeLight(LightColour newLights)
     {
         if (newLights != lights)
@@ -51,6 +53,14 @@ public class LightsManager : MonoBehaviour
             lightmapCamera.gameObject.SetActive(newLights != LightColour.Black);
         }
         lights = newLights;
+    }
+
+    public bool TryRemove(LightKind removedLight)
+    {
+        if (!HasLight(removedLight)) { return false; }
+        lightOrder = new(lightOrder.Where(l => l != removedLight));
+        ChangeLight(lights &(~(LightColour)removedLight));
+        return true;
     }
 
     public void PushLight(LightKind kind)

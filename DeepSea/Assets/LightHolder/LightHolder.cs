@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,5 +19,11 @@ public class LightHolder : MonoBehaviour
         Debug.Assert(HasLight);
         lightBlob.SetActive(false);
         return lightKind;
+    }
+
+    public void AddLight()
+    {
+        Debug.Assert(!HasLight);
+        lightBlob.SetActive(true);
     }
 }
