@@ -13,7 +13,7 @@ public enum LightColour
     Blue = 4,
     Yellow = Red | Green,
     Pink = Red | Blue,
-    Teal = Green | Blue,
+    Cyan = Green | Blue,
     White = Red | Green | Blue,
 }
 

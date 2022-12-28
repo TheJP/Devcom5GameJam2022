@@ -4,27 +4,30 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[Serializable]
-public class LightManagerColour
-{
-    [field: SerializeField]
-    public LightColour Colour { get; private set; }
-
-    [field: SerializeField]
-    public Camera Camera { get; private set; }
-}
-
 public class LightsManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject renderTarget;
+    const int LayerOffset = 16;
 
     [SerializeField]
-    private LightManagerColour[] colours;
+    private Camera lightmapCamera;
+
+    [SerializeField]
+    private GameObject renderTarget;
 
     private TilemapManager tilemapManager;
 
     private LightColour lights = LightColour.Black;
+    private Dictionary<LightColour, Color> colourMap = new()
+    {
+        { LightColour.Black, Color.black },
+        { LightColour.Red, Color.red },
+        { LightColour.Green, Color.green },
+        { LightColour.Blue, Color.blue },
+        { LightColour.Yellow, Color.yellow },
+        { LightColour.Pink, new Color(1, 0, 1) },
+        { LightColour.Cyan, new Color(0, 1, 1) },
+        { LightColour.White, Color.white },
+    };
 
     private void Start()
     {
@@ -32,25 +35,20 @@ public class LightsManager : MonoBehaviour
         Debug.Assert(tilemapManager != null);
     }
 
+    public bool IsLayerVisible(int layer) => layer == 0 || layer == LayerOffset + (int)lights;
+
     internal void AddLight(LightKind kind)
     {
         var newLights = lights | (LightColour)kind;
         if (newLights != lights)
         {
             tilemapManager.ActivateColour(newLights);
-            var oldColour = colours.FirstOrDefault(c => c.Colour == lights);
-            if (oldColour != null)
-            {
-                oldColour.Camera.transform.gameObject.SetActive(false);
-            }
 
-            var newColour = colours.FirstOrDefault(s => s.Colour == newLights);
-            if (newColour != null)
-            {
-                newColour.Camera.transform.gameObject.SetActive(true);
-            }
+            lightmapCamera.cullingMask = 1 << (LayerOffset + (int)newLights);
+            lightmapCamera.backgroundColor = colourMap[newLights];
 
             renderTarget.SetActive(newLights != LightColour.Black);
+            lightmapCamera.gameObject.SetActive(newLights != LightColour.Black);
         }
         lights = newLights;
     }

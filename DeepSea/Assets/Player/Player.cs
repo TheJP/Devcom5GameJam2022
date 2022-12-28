@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var lightHolder = collision.GetComponent<LightHolder>();
-        if (lightHolder != null)
+        if (lightHolder != null && lightsManager.IsLayerVisible(collision.gameObject.layer))
         {
             LightHolderFound(lightHolder);
         }

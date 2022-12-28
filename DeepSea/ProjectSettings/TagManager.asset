@@ -11,7 +11,6 @@ TagManager:
   - 
   - Water
   - UI
-  - Lightmap
   - 
   - 
   - 
@@ -23,12 +22,13 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Red
+  - Green
+  - Yellow
+  - Blue
+  - Pink
+  - Cyan
+  - White
   - 
   - 
   - 

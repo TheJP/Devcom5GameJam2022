@@ -64,10 +64,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 841fc21a4d3de384385070d154912132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightmapCamera: {fileID: 6995054479761531803}
   renderTarget: {fileID: 6995054479888409327}
-  colours:
-  - <Colour>k__BackingField: 1
-    <Camera>k__BackingField: {fileID: 6995054479761531803}
 --- !u!114 &6995054478743561492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +228,7 @@ GameObject:
   - component: {fileID: 6995054479761531804}
   - component: {fileID: 6995054479761531803}
   m_Layer: 0
-  m_Name: RedCamera
+  m_Name: LightMapCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +280,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 4b86bd2afaa78d240a678c32a4faff15, type: 2}
   m_TargetDisplay: 0
