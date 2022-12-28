@@ -1,0 +1,3 @@
+.heading {
+    -unity-text-align: upper-center;
+}

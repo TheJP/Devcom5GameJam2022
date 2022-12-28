@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class LevelCompleteBanner : MonoBehaviour
     private float opacityChangeSpeed = 1f;
 
     private float initialHeight = 0f;
+
+    public event Action Done;
 
     private void OnEnable()
     {
@@ -48,5 +51,8 @@ public class LevelCompleteBanner : MonoBehaviour
             bannerText.style.opacity = Mathf.Min(opacity, 1f);
             yield return null;
         }
+
+        yield return new WaitForSeconds(0.5f);
+        Done?.Invoke();
     }
 }

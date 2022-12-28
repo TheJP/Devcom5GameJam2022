@@ -42,6 +42,9 @@ public class Player : MonoBehaviour
 
         var lightSink = collision.GetComponent<LightSink>();
         if (lightSink != null) { LightSinkFound(lightSink); }
+
+        var target = collision.GetComponent<Target>();
+        if (target != null) { TargetFound(target); }
     }
 
     private void LightHolderFound(LightHolder lightHolder)
@@ -62,5 +65,13 @@ public class Player : MonoBehaviour
         if (lightSink.HasLight) { return; }
         var kind = lightsManager.PopLight();
         lightSink.AddLight(kind);
+    }
+
+    private void TargetFound(Target target)
+    {
+        var levelComplete = FindObjectOfType<LevelCompleteBanner>(true);
+        Debug.Assert(levelComplete != null);
+        levelComplete.Done += () => FindObjectOfType<LevelManager>().NextLevel();
+        levelComplete.gameObject.SetActive(true);
     }
 }
