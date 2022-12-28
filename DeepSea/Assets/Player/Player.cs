@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
     {
         var levelComplete = FindObjectOfType<LevelCompleteBanner>(true);
         Debug.Assert(levelComplete != null);
-        levelComplete.Done += () => FindObjectOfType<LevelManager>().NextLevel();
+        levelComplete.Done += () => FindObjectOfType<LevelManager>()?.NextLevel();
         levelComplete.gameObject.SetActive(true);
     }
 }

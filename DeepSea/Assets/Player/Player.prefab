@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6995054478743561491}
   - component: {fileID: 6995054478743561490}
   - component: {fileID: 6995054478743561495}
+  - component: {fileID: 1082046751074214503}
   - component: {fileID: 6995054478743561492}
   - component: {fileID: 6995054478743561493}
   - component: {fileID: 6995054478743561494}
@@ -66,6 +67,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightmapCamera: {fileID: 6995054479761531803}
   renderTarget: {fileID: 6995054479888409327}
+--- !u!114 &1082046751074214503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6995054478743561489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9349fb596953044e8b5c32cec469d22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 6995054478771301432}
+  front:
+  - {fileID: 21300000, guid: 3276cadf32f87f2499531107fa097a10, type: 3}
+  - {fileID: 21300000, guid: 1c92dbf891faac641ab45cb4b337051c, type: 3}
+  - {fileID: 21300000, guid: d8dfa05be2b8d8f4c894e836f6447f76, type: 3}
+  - {fileID: 21300000, guid: 9f5f2145f9c47dd48825471ff2427c3d, type: 3}
+  - {fileID: 21300000, guid: f55c0694bf85e384eaf8511a72d0b97b, type: 3}
+  - {fileID: 21300000, guid: e0bf2cfe50c446543ada81a7e671a27b, type: 3}
+  - {fileID: 21300000, guid: 38aef2867c5efed45839ac060da24ac1, type: 3}
+  - {fileID: 21300000, guid: 8fd0cd4602060854f889c49ddd47df0d, type: 3}
+  side:
+  - {fileID: 21300000, guid: a21cc1f9bec1cae4db6349d563e5462f, type: 3}
+  - {fileID: 21300000, guid: 39a27299905dcc74bba2fb982e59df1a, type: 3}
+  - {fileID: 21300000, guid: 90a79cedb50ba1b4abce9a3beb6b0c95, type: 3}
+  - {fileID: 21300000, guid: 3eb40303071873449bf99dae66014915, type: 3}
+  - {fileID: 21300000, guid: 83060fe2b78507a438f6c135564fbce4, type: 3}
+  - {fileID: 21300000, guid: 950e7cbf9322a8744b7bcf13120f7f0a, type: 3}
+  - {fileID: 21300000, guid: 502ec1d50024a594981bbdde8f8ec164, type: 3}
+  - {fileID: 21300000, guid: 346fcb05428e09942ab5a3be685a239b, type: 3}
+  back:
+  - {fileID: 21300000, guid: 8dd9bac638ef526439f0169af950d635, type: 3}
+  - {fileID: 21300000, guid: e5fe9902f1f0df242be6e1ae37eda40e, type: 3}
+  - {fileID: 21300000, guid: 739dfc0a756842a458b9571a92ed3ebb, type: 3}
+  - {fileID: 21300000, guid: bdca78566ddcef4449c42c3acfcf76f7, type: 3}
+  - {fileID: 21300000, guid: ffe569774fe354d42ac49755bcae3d50, type: 3}
+  - {fileID: 21300000, guid: 65497262637c9574188f733daa1a9824, type: 3}
+  - {fileID: 21300000, guid: 424ac11c654677047bc31a86f9bb2c62, type: 3}
+  - {fileID: 21300000, guid: 94d0dbf093dc1ee48a749c96ce2ba14c, type: 3}
 --- !u!114 &6995054478743561492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,8 +247,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3276cadf32f87f2499531107fa097a10, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

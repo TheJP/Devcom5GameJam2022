@@ -21,7 +21,7 @@ public class LightsManager : MonoBehaviour
     private Dictionary<LightColour, Color> colourMap = new()
     {
         { LightColour.Black, Color.black },
-        { LightColour.Red, Color.red },
+        { LightColour.Red, new Color(0.5f, 0, 0) },
         { LightColour.Green, Color.green },
         { LightColour.Blue, Color.blue },
         { LightColour.Yellow, Color.yellow },
@@ -32,6 +32,9 @@ public class LightsManager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Assert(Camera.main != null);
+        Camera.main.cullingMask = 0b111111;
+
         tilemapManager = FindObjectOfType<TilemapManager>();
         Debug.Assert(tilemapManager != null);
     }
