@@ -4,18 +4,21 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(LightsManager))]
 public class Player : MonoBehaviour
 {
     [SerializeField]
     private float speed = 1f;
 
-    private Vector2 move = Vector2.zero;
     private Rigidbody2D body;
-    private LightColour lights = LightColour.Black;
+    private LightsManager lightsManager;
 
-    void Start()
+    private Vector2 move = Vector2.zero;
+
+    private void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        lightsManager = GetComponent<LightsManager>();
     }
 
     private void FixedUpdate()
@@ -42,6 +45,6 @@ public class Player : MonoBehaviour
     {
         if (!lightHolder.HasLight) { return; }
         var kind = lightHolder.RemoveLight();
-        lights |= (LightColour)kind;
+        lightsManager.AddLight(kind);
     }
 }
