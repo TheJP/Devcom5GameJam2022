@@ -30,6 +30,8 @@ public class LightsManager : MonoBehaviour
         { LightColour.White, Color.white },
     };
 
+    public LightColour LightColour => lights;
+
     private void Start()
     {
         Debug.Assert(Camera.main != null);
