@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,17 +35,26 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!lightsManager.IsLayerVisible(collision.gameObject.layer)) { return; }
+
         var lightHolder = collision.GetComponent<LightHolder>();
-        if (lightHolder != null && lightsManager.IsLayerVisible(collision.gameObject.layer))
-        {
-            LightHolderFound(lightHolder);
-        }
+        if (lightHolder != null) { LightHolderFound(lightHolder); }
+
+        var lightSink = collision.GetComponent<LightSink>();
+        if (lightSink != null) { LightSinkFound(lightSink); }
     }
 
     private void LightHolderFound(LightHolder lightHolder)
     {
         if (!lightHolder.HasLight) { return; }
         var kind = lightHolder.RemoveLight();
-        lightsManager.AddLight(kind);
+        lightsManager.PushLight(kind);
+    }
+
+    private void LightSinkFound(LightSink lightSink)
+    {
+        if (lightSink.HasLight) { return; }
+        var kind = lightsManager.PopLight();
+        lightSink.AddLight(kind);
     }
 }

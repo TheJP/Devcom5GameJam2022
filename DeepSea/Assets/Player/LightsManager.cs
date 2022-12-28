@@ -17,6 +17,7 @@ public class LightsManager : MonoBehaviour
     private TilemapManager tilemapManager;
 
     private LightColour lights = LightColour.Black;
+    private Stack<LightKind> lightOrder = new();
     private Dictionary<LightColour, Color> colourMap = new()
     {
         { LightColour.Black, Color.black },
@@ -37,9 +38,8 @@ public class LightsManager : MonoBehaviour
 
     public bool IsLayerVisible(int layer) => layer == 0 || layer == LayerOffset + (int)lights;
 
-    internal void AddLight(LightKind kind)
+    private void ChangeLight(LightColour newLights)
     {
-        var newLights = lights | (LightColour)kind;
         if (newLights != lights)
         {
             tilemapManager.ActivateColour(newLights);
@@ -51,5 +51,19 @@ public class LightsManager : MonoBehaviour
             lightmapCamera.gameObject.SetActive(newLights != LightColour.Black);
         }
         lights = newLights;
+    }
+
+    public void PushLight(LightKind kind)
+    {
+        lightOrder.Push(kind);
+        ChangeLight(lights | (LightColour)kind);
+    }
+
+    public LightKind PopLight()
+    {
+        var removedLight = lightOrder.Pop();
+        var newLights = lights & (~(LightColour)removedLight);
+        ChangeLight(newLights);
+        return removedLight;
     }
 }
