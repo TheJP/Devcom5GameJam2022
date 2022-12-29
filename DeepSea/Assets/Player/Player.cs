@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float speed = 1f;
 
+    [field: SerializeField]
+    public bool Started { get; set; } = true;
+
     private Rigidbody2D body;
     private LightsManager lightsManager;
 
@@ -29,6 +32,11 @@ public class Player : MonoBehaviour
 
     public void OnMove(InputValue value)
     {
+        if (!Started)
+        {
+            return;
+        }
+
         move = value.Get<Vector2>().normalized;
         body.velocity = move * speed;
     }

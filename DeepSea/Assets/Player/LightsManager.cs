@@ -14,9 +14,11 @@ public class LightsManager : MonoBehaviour
     [SerializeField]
     private GameObject renderTarget;
 
+    [SerializeField]
+    private LightColour lights = LightColour.Black;
+
     private TilemapManager tilemapManager;
 
-    private LightColour lights = LightColour.Black;
     private Stack<LightKind> lightOrder = new();
     private Dictionary<LightColour, Color> colourMap = new()
     {
@@ -39,6 +41,23 @@ public class LightsManager : MonoBehaviour
 
         tilemapManager = FindObjectOfType<TilemapManager>();
         Debug.Assert(tilemapManager != null);
+
+        bool changed = false;
+        foreach (var light in new[] { LightKind.Red, LightKind.Green, LightKind.Blue })
+        {
+            if (HasLight(light))
+            {
+                changed = true;
+                lightOrder.Push(light);
+            }
+        }
+
+        if (changed)
+        {
+            var newLights = lights;
+            lights = LightColour.Black;
+            ChangeLight(newLights);
+        }
     }
 
     public bool IsLayerVisible(int layer) => layer == 0 || layer == LayerOffset + (int)lights;
@@ -64,7 +83,7 @@ public class LightsManager : MonoBehaviour
     {
         if (!HasLight(removedLight)) { return false; }
         lightOrder = new(lightOrder.Where(l => l != removedLight));
-        ChangeLight(lights &(~(LightColour)removedLight));
+        ChangeLight(lights & (~(LightColour)removedLight));
         return true;
     }
 

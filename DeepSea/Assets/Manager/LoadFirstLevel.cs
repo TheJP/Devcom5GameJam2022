@@ -31,6 +31,10 @@ public class LoadFirstLevel : MonoBehaviour
 
     private IEnumerator Start()
     {
+        // Disable player
+        var player = FindObjectOfType<Player>();
+        player.Started = false;
+
         foreground.sprite = animationSprites[0];
 
         // Animate Fish Blinking
@@ -79,5 +83,7 @@ public class LoadFirstLevel : MonoBehaviour
         }
         foreground.color = targetColour;
         background.color = targetColour;
+
+        player.Started = true;
     }
 }

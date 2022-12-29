@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4456896230520673604}
   - component: {fileID: 4511724799097446278}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +830,7 @@ GameObject:
   - component: {fileID: 2117773956202229064}
   - component: {fileID: 2117773956202229065}
   - component: {fileID: 2117773956202229066}
-  m_Layer: 21
+  m_Layer: 20
   m_Name: BlueTilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
