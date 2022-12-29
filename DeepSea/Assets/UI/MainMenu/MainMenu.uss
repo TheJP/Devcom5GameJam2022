@@ -1,0 +1,7 @@
+.heading {
+    -unity-text-align: upper-center;
+    -unity-font: url('project://database/Assets/Fonts/Lobster-Regular.ttf?fileID=12800000&guid=70325b7bf0993a742a048ab30b7ca319&type=3#Lobster-Regular');
+    -unity-font-definition: none;
+    font-size: 100px;
+    color: rgb(0, 120, 4);
+}

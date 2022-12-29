@@ -20,3 +20,16 @@
 .credits-link:hover {
     color: rgb(55, 117, 221);
 }
+
+.button {
+    background-color: rgb(17, 17, 17);
+    color: rgb(221, 221, 221);
+    flex-direction: row;
+    width: 150px;
+    align-items: center;
+}
+
+.button-image {
+    width: 20px;
+    height: 20px;
+}

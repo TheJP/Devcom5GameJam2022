@@ -1,9 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/IngameInterface/IngameInterface.uss?fileID=7433441132597879392&amp;guid=654cb951723c50b459ac68845c2b0009&amp;type=3#IngameInterface" />
-    <ui:VisualElement>
-        <ui:Button display-tooltip-when-elided="true" name="restart-level" focusable="false" class="button">
-            <ui:VisualElement class="button-image" />
-            <ui:Label text="Restart Level" display-tooltip-when-elided="true" class="button-label" />
-        </ui:Button>
-    </ui:VisualElement>
-</ui:UXML>

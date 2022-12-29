@@ -11,7 +11,6 @@
 }
 
 .button-image {
-    background-image: url('project://database/Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/d_refresh@2x.png?fileID=21300000&guid=602b72d4617c3694aa94419fc1b68e04&type=3#d_refresh@2x');
     width: 20px;
     height: 20px;
 }

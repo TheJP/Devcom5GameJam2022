@@ -10,7 +10,11 @@ public class IngameInterface : MonoBehaviour
     private void Start()
     {
         var uiDocument = GetComponent<UIDocument>();
+
         var restartLevel = uiDocument.rootVisualElement.Q<Button>("restart-level");
         restartLevel.RegisterCallback<ClickEvent>(e => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex));
+
+        var home = uiDocument.rootVisualElement.Q<Button>("home");
+        home.RegisterCallback<ClickEvent>(e => SceneManager.LoadScene(0));
     }
 }
