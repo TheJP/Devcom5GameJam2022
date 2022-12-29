@@ -8,6 +8,6 @@ public class LoadFirstLevel : MonoBehaviour
     void Start()
     {
         // TODO: Add Main Menu, Tutorial, or similar
-        SceneManager.LoadScene("TestLevel01");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
