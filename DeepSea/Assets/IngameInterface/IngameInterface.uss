@@ -1,0 +1,20 @@
+.button {
+    background-color: rgb(17, 17, 17);
+    color: rgb(221, 221, 221);
+    flex-direction: row;
+    justify-content: space-around;
+    -unity-text-align: middle-center;
+    width: 150px;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.button-image {
+    background-image: url('project://database/Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/d_refresh@2x.png?fileID=21300000&guid=602b72d4617c3694aa94419fc1b68e04&type=3#d_refresh@2x');
+    width: 20px;
+    height: 20px;
+}
+
+.button-label {
+}
