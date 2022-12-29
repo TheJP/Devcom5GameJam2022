@@ -3,10 +3,20 @@
     -unity-font: url('project://database/Assets/Fonts/Lobster-Regular.ttf?fileID=12800000&guid=70325b7bf0993a742a048ab30b7ca319&type=3#Lobster-Regular');
     -unity-font-definition: none;
     font-size: 100px;
-    color: rgba(0, 120, 4, 255);
+    color: rgb(0, 120, 4);
 }
 
 .credits-line {
-    color: rgba(221, 221, 221, 255);
+    color: rgb(221, 221, 221);
     font-size: 25px;
+}
+
+.credits-link {
+    color: rgb(55, 80, 221);
+    width: 438px;
+    font-size: 18px;
+}
+
+.credits-link:hover {
+    color: rgb(55, 117, 221);
 }

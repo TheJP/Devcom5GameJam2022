@@ -1,31 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class LightSink : MonoBehaviour
 {
     [SerializeField]
-    private SpriteRenderer lightBlob;
-
-    [SerializeField]
     private LightKind lightKind;
 
-    public bool HasLight => lightBlob.gameObject.activeSelf;
-    public LightKind LightKind => lightKind;
+    [SerializeField]
+    private bool hasLight;
 
-    private Dictionary<LightKind, Color> colourMap = new()
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    private Sprite[] sprites;
+
+    public bool HasLight => hasLight;
+    public LightKind LightKind => lightKind;
+    private int SpriteIndex => (hasLight, lightKind) switch
     {
-        { LightKind.Red, Color.red },
-        { LightKind.Green, Color.green },
-        { LightKind.Blue, Color.blue },
+        (false, _) => 0,
+        (true, LightKind.Red) => 1,
+        (true, LightKind.Green) => 2,
+        (true, LightKind.Blue) => 3,
+        _ => throw new InvalidOperationException(),
     };
+
+    private void Start()
+    {
+        Debug.Assert(sprites.Length == 4);
+    }
+
+    private void Update()
+    {
+        spriteRenderer.sprite = sprites[SpriteIndex];
+    }
 
     public void AddLight(LightKind lightKind)
     {
         Debug.Assert(!HasLight);
-        lightBlob.gameObject.SetActive(true);
-        lightBlob.color = colourMap[lightKind];
-        lightBlob.color = new Color(lightBlob.color.r, lightBlob.color.g, lightBlob.color.b, 0.6666667f);
+        hasLight = true;
         this.lightKind = lightKind;
     }
 }
