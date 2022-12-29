@@ -21,7 +21,7 @@ public class LightsManager : MonoBehaviour
     private Dictionary<LightColour, Color> colourMap = new()
     {
         { LightColour.Black, Color.black },
-        { LightColour.Red, new Color(0.5f, 0, 0) },
+        { LightColour.Red, Color.red },
         { LightColour.Green, Color.green },
         { LightColour.Blue, Color.blue },
         { LightColour.Yellow, Color.yellow },
@@ -52,7 +52,7 @@ public class LightsManager : MonoBehaviour
             tilemapManager.ActivateColour(newLights);
 
             lightmapCamera.cullingMask = 1 << (LayerOffset + (int)newLights);
-            lightmapCamera.backgroundColor = colourMap[newLights];
+            lightmapCamera.backgroundColor = colourMap[newLights] * 0.5f;
 
             renderTarget.SetActive(newLights != LightColour.Black);
             lightmapCamera.gameObject.SetActive(newLights != LightColour.Black);

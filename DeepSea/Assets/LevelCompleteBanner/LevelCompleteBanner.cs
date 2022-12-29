@@ -13,6 +13,9 @@ public class LevelCompleteBanner : MonoBehaviour
     [SerializeField]
     private float opacityChangeSpeed = 1f;
 
+    [SerializeField]
+    private float waitForNextLevelSeconds = 0.5f;
+
     private float initialHeight = 0f;
 
     public event Action Done;
@@ -52,7 +55,7 @@ public class LevelCompleteBanner : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(waitForNextLevelSeconds);
         Done?.Invoke();
     }
 }

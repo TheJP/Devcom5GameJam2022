@@ -1,5 +1,13 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Credits/Credits.uss?fileID=7433441132597879392&amp;guid=7161804637c27554e90584464bfae341&amp;type=3#Credits" />
-    <ui:VisualElement />
-    <ui:Label text="Credits:" display-tooltip-when-elided="true" class="heading" />
+    <ui:VisualElement style="justify-content: space-around; height: 100%; width: 100%;">
+        <ui:VisualElement style="align-items: center;">
+            <ui:Label text="Credits" display-tooltip-when-elided="true" class="heading" />
+            <ui:VisualElement style="width: 420px; height: auto;">
+                <ui:Label text="Illustrations: Max Egli (he/him)" display-tooltip-when-elided="true" class="credits-line" />
+                <ui:Label text="Programming: Janis Peyer (he/him)" display-tooltip-when-elided="true" class="credits-line" />
+                <ui:Label text="Idea and Level Design: both" display-tooltip-when-elided="true" class="credits-line" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>
