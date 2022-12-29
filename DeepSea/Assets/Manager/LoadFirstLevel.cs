@@ -27,6 +27,9 @@ public class LoadFirstLevel : MonoBehaviour
     private Sprite[] animationSprites;
 
     [SerializeField]
+    private Sprite largeFinalSprite;
+
+    [SerializeField]
     private Vector2 targetScale = new Vector2(0.2f, 0.2f);
 
     private IEnumerator Start()
@@ -70,19 +73,18 @@ public class LoadFirstLevel : MonoBehaviour
         foreground.transform.localScale = targetScale;
 
         // Fade From Animation to Game
+        foreground.sprite = largeFinalSprite;
+        background.gameObject.SetActive(false);
         startTime = Time.time;
         foregroundStart = foreground.color;
-        var backgroundStart = background.color;
-        var targetColour = new Color(0, 0, 0, 0);
+        foregroundTarget = new Color(0, 0, 0, 0);
         while (Time.time - startTime < fadeAnimationSeconds)
         {
             var t = (Time.time - startTime) / fadeAnimationSeconds;
-            background.color = Color.Lerp(backgroundStart, targetColour, t);
-            foreground.color = Color.Lerp(foregroundStart, targetColour, t);
+            foreground.color = Color.Lerp(foregroundStart, foregroundTarget, t);
             yield return null;
         }
-        foreground.color = targetColour;
-        background.color = targetColour;
+        foreground.color = foregroundTarget;
 
         player.Started = true;
     }
