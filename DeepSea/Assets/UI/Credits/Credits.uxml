@@ -4,8 +4,8 @@
         <ui:VisualElement style="align-items: center;">
             <ui:Label text="Credits" display-tooltip-when-elided="true" class="heading" />
             <ui:VisualElement style="width: 438px; height: auto;">
-                <ui:Label text="Illustrations: Max Egli (he/him)" display-tooltip-when-elided="true" class="credits-line" />
-                <ui:Label text="Programming: Janis Peyer (he/him)" display-tooltip-when-elided="true" class="credits-line" />
+                <ui:Label text="Art: Max Egli (he/him)" display-tooltip-when-elided="true" class="credits-line" />
+                <ui:Label text="Code: Janis Peyer (he/him)" display-tooltip-when-elided="true" class="credits-line" />
                 <ui:Label text="Idea and Level Design: both" display-tooltip-when-elided="true" class="credits-line" />
                 <ui:Label display-tooltip-when-elided="true" text="&lt;u&gt;https://github.com/TheJP/Devcom5GameJam2022&lt;/u&gt;" name="link" class="credits-line credits-link" />
             </ui:VisualElement>
