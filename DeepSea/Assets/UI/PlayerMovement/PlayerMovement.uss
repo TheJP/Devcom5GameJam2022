@@ -1,0 +1,12 @@
+.button {
+    background-color: rgb(17, 17, 17);
+    color: rgb(221, 221, 221);
+    flex-direction: row;
+    justify-content: space-around;
+    -unity-text-align: middle-center;
+    width: 150px;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+}

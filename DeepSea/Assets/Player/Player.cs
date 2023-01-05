@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(LightsManager))]
+[RequireComponent(typeof(UIDocument))]
 public class Player : MonoBehaviour
 {
     [SerializeField]
@@ -23,6 +25,24 @@ public class Player : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         lightsManager = GetComponent<LightsManager>();
+
+        var uiDocument = GetComponent<UIDocument>();
+
+        (string name, Vector2 movement)[] buttons = new[]
+        {
+            ("up", new Vector2(0, 1)),
+            ("right", new Vector2(1, 0)),
+            ("down", new Vector2(0, -1)),
+            ("left", new Vector2(-1, 0))
+        };
+
+        foreach (var definition in buttons)
+        {
+            var button = uiDocument.rootVisualElement.Q<Button>(definition.name);
+            button.clickable.activators.Clear();
+            button.RegisterCallback<MouseDownEvent>(e => Move(definition.movement));
+            button.RegisterCallback<MouseUpEvent>(e => Move(0, 0));
+        }
     }
 
     private void FixedUpdate()
@@ -30,14 +50,18 @@ public class Player : MonoBehaviour
         body.velocity = move * speed;
     }
 
-    public void OnMove(InputValue value)
+    public void OnMove(InputValue value) => Move(value.Get<Vector2>());
+
+    private void Move(float x, float y) => Move(new Vector2(x, y));
+
+    private void Move(Vector2 move)
     {
         if (!Started)
         {
             return;
         }
 
-        move = value.Get<Vector2>().normalized;
+        this.move = move.normalized;
         body.velocity = move * speed;
     }
 
