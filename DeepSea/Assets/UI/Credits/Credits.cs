@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
@@ -16,5 +14,13 @@ public class Credits : MonoBehaviour
 
         var home = uiDocument.rootVisualElement.Q<Button>("home");
         home.RegisterCallback<ClickEvent>(e => SceneManager.LoadScene(0));
+    }
+
+    private void Update()
+    {
+        if (Input.anyKey)
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
