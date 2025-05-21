@@ -23,6 +23,23 @@
     border-radius: 15px;
 }
 
+#home.button {
+    width: 90px;
+}
+
+.open .button {
+    font-size: 30px;
+    border-width: 5px;
+}
+
+.open #home.button {
+    width: 150px;
+}
+
+.open #restart-level {
+    width: 300px;
+}
+
 .button:hover {
     color: rgb(150, 150, 150);
     border-color: rgb(150, 150, 150);
@@ -41,6 +58,11 @@
 .button-image {
     width: 20px;
     height: 20px;
+}
+
+.open .button-image {
+    width: 40px;
+    height: 40px;
 }
 
 .button-label {
