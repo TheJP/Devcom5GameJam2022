@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -21,8 +18,11 @@ public class Player : MonoBehaviour
 
     private Vector2 move = Vector2.zero;
 
+    private IngameInterface ingameInterface;
+
     private void Start()
     {
+        ingameInterface = FindObjectOfType<IngameInterface>();
         body = GetComponent<Rigidbody2D>();
         lightsManager = GetComponent<LightsManager>();
 
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 
     private void Move(Vector2 move)
     {
-        if (!Started)
+        if (!Started || ingameInterface.MenuOpen)
         {
             return;
         }

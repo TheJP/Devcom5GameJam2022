@@ -1,3 +1,13 @@
+.container {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.container.open {
+    flex-direction: column;
+    margin: auto auto;
+}
+
 .button {
     background-color: rgb(17, 17, 17);
     color: rgb(221, 221, 221);
@@ -6,8 +16,26 @@
     -unity-text-align: middle-center;
     width: 150px;
     align-items: center;
-    margin-left: 10px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 10px;
+
+    border-radius: 15px;
+}
+
+.button:hover {
+    color: rgb(150, 150, 150);
+    border-color: rgb(150, 150, 150);
+}
+
+.button:focus {
+    color: rgb(50, 180, 50);
+    border-color: rgb(50, 180, 50);
+}
+
+.button:active {
+    color: rgb(50, 200, 50);
+    border-color: rgb(50, 200, 50);
 }
 
 .button-image {
