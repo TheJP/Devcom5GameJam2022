@@ -1,0 +1,30 @@
+.root {
+	margin: auto auto;
+	width: 400px;
+
+	padding: 15px 15px;
+
+	border-radius: 30px;
+	border-color: rgb(221, 221, 221);
+	border-width: 3px;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.heading {
+    -unity-text-align: upper-center;
+    -unity-font: url('project://database/Assets/Fonts/Lobster-Regular.ttf?fileID=12800000&guid=70325b7bf0993a742a048ab30b7ca319&type=3#Lobster-Regular');
+    -unity-font-definition: none;
+    font-size: 50px;
+    color: rgb(255, 196, 70);
+	margin-bottom: 15px;
+}
+
+.text {
+	color: rgb(221, 221, 221);
+    -unity-text-align: upper-center;
+    font-size: 20px;
+}
+
+.count_down {
+    color: rgb(255, 196, 70);
+}

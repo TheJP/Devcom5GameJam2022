@@ -1,5 +1,68 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &327663113727374245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9085163637171181198}
+  - component: {fileID: 8014712005937683537}
+  - component: {fileID: 5661152507219168252}
+  m_Layer: 0
+  m_Name: ResetOnInactivity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9085163637171181198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327663113727374245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2117773955522595539}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8014712005937683537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327663113727374245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 1beeb87be909e8f4a9f8cab37a35bcdd, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 7f8b662a420f76549914eab97ca2e079, type: 3}
+  m_SortingOrder: 1
+--- !u!114 &5661152507219168252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327663113727374245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfca5d0277c142445883fbfa8644c9e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSecondsOfInactivity: 180
+  secondsOfWarning: 30
 --- !u!1 &366737463738001294
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,6 +324,7 @@ Transform:
   - {fileID: 2117773955937568544}
   - {fileID: 1798548184}
   - {fileID: 5269733618992545738}
+  - {fileID: 9085163637171181198}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2022,7 +2086,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 1beeb87be909e8f4a9f8cab37a35bcdd, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: d98f9dba6e239ec4899c8fce438fce4c, type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 2
 --- !u!114 &6111019007615163586
 MonoBehaviour:
   m_ObjectHideFlags: 0

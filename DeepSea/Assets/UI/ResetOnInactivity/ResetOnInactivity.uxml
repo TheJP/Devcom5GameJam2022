@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/ResetOnInactivity/ResetOnInactivity.uss?fileID=7433441132597879392&amp;guid=ac2357a05ed7f2347b691610672475b4&amp;type=3#ResetOnInactivity" />
+    <ui:VisualElement name="root" picking-mode="Ignore" class="root" style="display: none;">
+        <ui:Label text="Inactive" display-tooltip-when-elided="true" class="heading" />
+        <ui:Label text="The game will reset in" display-tooltip-when-elided="true" class="text" />
+        <ui:Label text="30s" display-tooltip-when-elided="true" name="countdown" class="text count_down" />
+        <ui:Label text="- press any key to keep playing -" display-tooltip-when-elided="true" class="text" style="margin-top: 20px; margin-bottom: 10px;" />
+    </ui:VisualElement>
+</ui:UXML>
