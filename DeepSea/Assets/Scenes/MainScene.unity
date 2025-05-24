@@ -268,3 +268,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e154ee77c81e4554d88656a6b68c53fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  antiBurnInInterval: 600
